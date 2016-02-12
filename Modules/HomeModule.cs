@@ -27,11 +27,10 @@ namespace ContactsInfo
         Contact.DeleteAll();
         return View["eraseContact.cshtml"];
       };
+      Get["/contactList/{id}"] = parameters => {
+        Contact contact = Contact.find(parameters.id);
+        return View["/.cshtml", contact];
+      };
     }
   }
 }
-
-// Get["/contactList/{id}"] = parameters => {
-//   Contact contact = Contact.find(parameters.id);
-//   return View["/.cshtml", contact];
-// };

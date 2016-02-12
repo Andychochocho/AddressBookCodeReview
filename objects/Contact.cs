@@ -6,23 +6,23 @@ namespace Contacts.Objects
     private string _name;
     private int _phoneNumber;
     private string _address;
-    // private int _id;
+    private int _id;
     private static List<Contact> _instances = new List<Contact> {};
 
-    public Contact(string Name, int PhoneNumber, string Address)
+    public Contact(string Name, string PhoneNumber, string Address)
     {
       _name = Name;
       _phoneNumber = PhoneNumber;
       _address = Address;
       _instances.Add(this);
-      // _instances.Count();
+      _instances.Count();
     }
 
     public string GetName()
     {
       return _name;
     }
-    public int GetPhoneNumber()
+    public string GetPhoneNumber()
     {
       return _phoneNumber;
     }
@@ -30,10 +30,10 @@ namespace Contacts.Objects
     {
       return _address;
     }
-    // public int GetId()
-    // {
-    //   return _id;
-    // }
+    public int GetId()
+    {
+      return _id;
+    }
     public static List<Contact> GetAll()
     {
       return _instances;
@@ -42,10 +42,9 @@ namespace Contacts.Objects
     {
       _instances.Clear();
     }
+    public static Contact Find(int searchId)
+    {
+      return _instances(searchId - 1);
+    }
   }
 }
-
-// public static Contact Find(int searchId)
-// {
-//   return _instances(searchId - 1);
-// }
