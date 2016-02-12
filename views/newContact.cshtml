@@ -1,5 +1,16 @@
 <h1>Congrats!</h1>
 <h2>You created a brand new Contact!</h2>
-<h3>Click below to check all your contacts</h3>
 
 <a href="/contactList">Go to list of all Contacts</a>
+
+<li>
+  <h3>Name: @Model.GetName()</h3>
+  <ul>
+    <li>
+      Phone Number: @Model.GetPhoneNumber()
+    </li>
+    <li>
+      Address: @Model.GetAddress()
+    </li>
+  </li>
+  </ul>

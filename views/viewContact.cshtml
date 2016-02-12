@@ -7,13 +7,13 @@
   @foreach (var contact in Model)
   {
     <li>
-      <h3>@contact.GetName()</h3>
+      <h3>Name: @contact.GetName()</h3>
       <ul>
         <li>
-          @contact.GetPhoneNumber()
+          Phone Number: @contact.GetPhoneNumber()
         </li>
         <li>
-          @contact.GetAddress()
+          Address: @contact.GetAddress()
         </li>
       </li>
       </ul>
