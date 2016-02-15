@@ -7,16 +7,10 @@
   @foreach (var contact in Model)
   {
     <li>
-      <h3>Name: @contact.GetName()</h3>
-      <ul>
-        <li>
-          Phone Number: @contact.GetPhoneNumber()
-        </li>
-        <li>
-          Address: @contact.GetAddress()
-        </li>
-      </li>
-      </ul>
+      <h3>
+        <a href='/contactList/@contact.GetId()'>@contact.GetName()</a>
+      </h3>
+    </li>
   }
 <form action="/contacts_deleted" method="post">
 <button type="submit" name="button">Click here to delete all contacts</button>

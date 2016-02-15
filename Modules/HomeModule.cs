@@ -21,15 +21,19 @@ namespace ContactsInfo
       Post["/contact_created"] = _ => {
         Contact newContact = new Contact(Request.Form["Name"], Request.Form["PhoneNumber"], Request.Form["Address"]);
         List<Contact> getContact = Contact.GetAll();
-        return View["newContact.cshtml",newContact];
+        return View["newContact.cshtml", newContact];
       };
       Post["/contacts_deleted"] = _ => {
         Contact.DeleteAll();
         return View["eraseContact.cshtml"];
       };
+      Post["/contactList"] = _ => {
+        var allContact = Contact.GetAll();
+        return View["viewContact.cshtml", allContact];
+      };
       Get["/contactList/{id}"] = parameters => {
         Contact contact = Contact.Find(parameters.id);
-        return View["/.cshtml", contact];
+        return View["/detailsContact.cshtml", contact];
       };
     }
   }
